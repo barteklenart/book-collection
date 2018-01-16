@@ -108,10 +108,6 @@
             1,
             "always"
         ],
-        "arrow-body-style": [
-            1,
-            "always"
-        ],
         "no-multiple-empty-lines": [
             1,
             {
@@ -136,24 +132,12 @@
             1,
             "never"
         ],
-        "no-unused-vars": [
-            "error",
-            {
-                "vars": "local",
-                "args": "after-used",
-                "ignoreRestSiblings": false
-            }
-        ],
         "prefer-arrow-callback": 1,
         "prefer-const": 1,
         "no-var": 1,
         "prefer-template": 1,
         "prefer-rest-params": 1,
         "prefer-spread": 1,
-        "object-shorthand": [
-            1,
-            "always"
-        ],
         "no-array-constructor": 1,
         "no-new-object": 1,
         "new-cap": 1,
