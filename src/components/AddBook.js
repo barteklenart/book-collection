@@ -1,18 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addBook } from '../actions/books';
 
-const AddBook = () => {
+import BookForm from './BookForm';
+
+const AddBook = (props) => {
+	const onSubmit = (book) => {
+		props.addBook(book);
+	}
 	return (
 		<div>
 			<h2>Add new book</h2>
-			<form>	
-				<label htmlFor="title">Title:</label>
-				<input id="title" type="test" />
-				<label htmlFor="content">Content</label>
-				<textarea id="content" col="10" row="5"></textarea>
-				<label>Completed</label>
-			</form>
+			<BookForm onSubmit={onSubmit}/>
 		</div>
 	);
 };
 
-export default AddBook;
+const mapDispatchToProps = (dispatch) => {
+	return {
+		addBook: (book) => dispatch(addBook(book))
+	};
+};
+
+export default connect(undefined, mapDispatchToProps)(AddBook);

@@ -1,11 +1,12 @@
-export const  addBook = (id = 1, title = '', description = '', completedAt = 0) => {
+import uuid from 'uuid';
+
+export const  addBook = (book) => {
+	const id = uuid();
 	return {
 		type: 'ADD_BOOK',
 		book: {
 			id,
-			title,
-			description,
-			completedAt
+			...book
 		}
 	};
 };
