@@ -1,4 +1,8 @@
+import "react-dates/initialize";
 import React from 'react';
+import moment from 'moment';
+import { SingleDatePicker } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
 
 class BookForm extends React.Component {
 
@@ -8,7 +12,8 @@ class BookForm extends React.Component {
 		this.state = {
 			title: '',
 			description: '',
-			completedAt: 0
+			completedAt: props.book ? props.book.completedAt: moment(),
+			calendarFocused: null
 		};
 	}
 
@@ -29,7 +34,17 @@ class BookForm extends React.Component {
 		this.props.onSubmit({
 			title: this.state.title,
 			description: this.state.description,
-			completedAt: this.state.completedAt
+			completedAt: this.state.completedAt.valueOf()
+		})
+	}
+
+	onDateChange = (completedAt) => {
+		this.setState({ completedAt });
+	}
+
+	onFocusChange = ({ focused }) => {
+		this.setState({
+			calendarFocused: focused
 		})
 	}
 
@@ -52,6 +67,12 @@ class BookForm extends React.Component {
 					onChange={this.onDescriptionChange}
 				></textarea>
 				<label>Completed</label>
+				<SingleDatePicker
+					date={this.state.completedAt}
+					onDateChange={this.onDateChange}
+					focused={this.state.calendarFocused}
+					onFocusChange={this.onFocusChange}
+				/>
 				<button type="submit">Add Book</button>
 			</form>
 		);
