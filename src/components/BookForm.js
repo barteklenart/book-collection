@@ -8,11 +8,10 @@ class BookForm extends React.Component {
 
 	constructor(props){
 		super(props);
-
 		this.state = {
-			title: '',
-			description: '',
-			completedAt: props.book ? props.book.completedAt: moment(),
+			title: props.book ? props.book.title : '',
+			description: props.book ? props.book.description : '',
+			completedAt: props.completedAt ? props.book.completedAt: moment(),
 			calendarFocused: null
 		};
 	}
@@ -58,12 +57,12 @@ class BookForm extends React.Component {
 					value={this.state.title}
 					onChange={this.onTitleChange} 
 				/>
-				<label htmlFor="content">Content</label>
+				<label htmlFor="description">Description</label>
 				<textarea 
-					id="content" 
+					id="description" 
 					col="10" 
 					row="5"
-					value={this.state.content}
+					value={this.state.description}
 					onChange={this.onDescriptionChange}
 				></textarea>
 				<label>Completed</label>

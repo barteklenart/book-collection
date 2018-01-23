@@ -7,7 +7,8 @@ import BookForm from './BookForm';
 const AddBook = (props) => {
 	const onSubmit = (book) => {
 		props.addBook(book);
-	}
+		props.history.push('/');
+	};
 	return (
 		<div>
 			<h2>Add new book</h2>
