@@ -48,6 +48,7 @@ class BookForm extends React.Component {
 	}
 
 	render(){
+		const btnText = this.props.book ? 'Edit Book' : 'Add book';
 		return (
 			<form onSubmit={this.onSubmit}>
 				<label htmlFor="title">Title:</label>
@@ -72,7 +73,7 @@ class BookForm extends React.Component {
 					focused={this.state.calendarFocused}
 					onFocusChange={this.onFocusChange}
 				/>
-				<button type="submit">Add Book</button>
+				<button type="submit">{ btnText }</button>
 			</form>
 		);
 	}
