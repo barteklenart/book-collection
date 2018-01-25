@@ -1,15 +1,20 @@
-export default (books, filters) => {
+import moment from 'moment';
+
+export default (books, { sortBy, text, startDate, endDate }) => {
 	return books.filter((book) => {
-		const textMatch = book.title.toLowerCase().includes(filters.text.toLowerCase());
-		return textMatch;
+		const createdAtMoment = moment(book.completedAt);
+		const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
+		const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true;
+		const textMatch = book.title.toLowerCase().includes(text.toLowerCase());
+		return textMatch && startDateMatch && endDateMatch;
 	}).sort((a, b) => {
-		if (filters.sortBy === 'titleup'){
+		if (sortBy === 'titleup'){
 			return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
-		} else if (filters.sortBy === 'titledown') {
+		} else if (sortBy === 'titledown') {
 			return a.title.toLowerCase() < b.title.toLowerCase() ? 1 : -1;
-		} else if (filters.sortBy === 'dateup'){
+		} else if (sortBy === 'dateup'){
 			return a.completedAt > b.completedAt ? 1 : -1;
-		} else if (filters.sortBy === 'datedown') {
+		} else if (sortBy === 'datedown') {
 			return a.completedAt < b.completedAt ? 1 : -1;
 		}
 	});

@@ -1,4 +1,13 @@
-export default (state = { text: '', sortBy: 'title' }, action) => {
+import moment from 'moment';
+
+const defaultState = {
+	text: '', 
+	sortBy: 'title', 
+	startDate: moment().startOf('month'), 
+	endDate: moment().endOf('month')
+}
+
+export default (state = defaultState, action) => {
 	switch (action.type) {
 		case 'SET_TEXT_FILTER':
 			return {
@@ -24,6 +33,16 @@ export default (state = { text: '', sortBy: 'title' }, action) => {
 			return {
 				...state,
 				sortBy: 'titledown'
+			}
+		case 'SET_START_DATE':
+			return {
+				...state,
+				startDate: action.startDate
+			}
+		case 'SET_END_DATE': 
+			return {
+				...state,
+				endDate: action.endDate
 			}
 		default:
 			return state;
