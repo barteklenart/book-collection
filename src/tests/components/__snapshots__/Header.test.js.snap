@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<header>
+  <h1>
+    Book collection
+  </h1>
+  <NavLink
+    activeClassName="current"
+    ariaCurrent="true"
+    to="/"
+  >
+    Dashboard
+  </NavLink>
+  <NavLink
+    activeClassName="current"
+    ariaCurrent="true"
+    to="/add"
+  >
+    Add Book
+  </NavLink>
+</header>
+`;

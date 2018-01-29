@@ -71,15 +71,7 @@
         ],
         "keyword-spacing": 1,
         "block-spacing": 1,
-        "array-bracket-spacing": [
-            1,
-            "always"
-        ],
         "object-curly-spacing": [
-            1,
-            "always"
-        ],
-        "computed-property-spacing": [
             1,
             "always"
         ],

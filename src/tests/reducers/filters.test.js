@@ -33,6 +33,6 @@ test('should set startDate filter ', () => {
 });
 test('should set endDate filter', () => {
 	const endDate = moment();
-	const state = filterReducer(undefined, { type: 'SET_START_DATE', endDate });
+	const state = filterReducer(undefined, { type: 'SET_END_DATE', endDate });
 	expect(state.endDate).toBe(endDate);
 });
