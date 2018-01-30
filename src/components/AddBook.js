@@ -4,7 +4,7 @@ import { addBook } from '../actions/books';
 
 import BookForm from './BookForm';
 
-const AddBook = (props) => {
+export const AddBook = (props) => {
 	const onSubmit = (book) => {
 		props.addBook(book);
 		props.history.push('/');

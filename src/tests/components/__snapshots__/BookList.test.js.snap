@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BookList correctly 1`] = `
+<div>
+  <BookListItem
+    book={
+      Object {
+        "completedAt": 1516878000000,
+        "description": "Some description",
+        "id": 1234,
+        "title": "Hary Poter",
+      }
+    }
+    key="1234"
+    removeBook={[Function]}
+  />
+  <BookListItem
+    book={
+      Object {
+        "completedAt": 1518878000000,
+        "description": "Some description",
+        "id": 12345,
+        "title": "Win or learn",
+      }
+    }
+    key="12345"
+    removeBook={[Function]}
+  />
+  <BookListItem
+    book={
+      Object {
+        "completedAt": 1516878000000,
+        "description": "asdf",
+        "id": 123456,
+        "title": "Abc",
+      }
+    }
+    key="123456"
+    removeBook={[Function]}
+  />
+</div>
+`;
+
+exports[`should render BookList with empty books array 1`] = `
+<div>
+  <p>
+    No books
+  </p>
+</div>
+`;

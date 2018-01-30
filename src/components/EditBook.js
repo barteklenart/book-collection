@@ -5,7 +5,7 @@ import { editBook } from '../actions/books';
 import BookForm from './BookForm';
 
 
-class EditBook extends React.Component {
+export class EditBook extends React.Component {
 	onSubmit = (book) => {
 		this.props.editBook(this.props.book.id, book)
 		this.props.history.push('/');

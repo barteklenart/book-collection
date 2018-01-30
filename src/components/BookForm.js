@@ -11,7 +11,7 @@ class BookForm extends React.Component {
 		this.state = {
 			title: props.book ? props.book.title : '',
 			description: props.book ? props.book.description : '',
-			completedAt: props.completedAt ? props.book.completedAt: moment(),
+			completedAt: props.book ? moment(props.book.completedAt) : moment(),
 			calendarFocused: null
 		};
 	}

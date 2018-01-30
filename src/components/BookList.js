@@ -5,7 +5,7 @@ import BookListItem from './BookListItem';
 import { removeBook } from '../actions/books';
 import selectBook from '../selectors/book';
 
-const BookList = (props) => {
+export const BookList = (props) => {
 	const removeBook = (id) => {
 		props.removeBook(id);
 	};

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should handle removeBook 1`] = `
+<div>
+  <h3>
+    Hary Poter
+  </h3>
+  <p>
+    Some description
+  </p>
+  <span>
+    01-25-2018
+  </span>
+  <Link
+    replace={false}
+    to="/edit/1234"
+  >
+    Edit
+  </Link>
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+  <hr />
+</div>
+`;
+
+exports[`should render BookListItem correctly 1`] = `
+<div>
+  <h3>
+    Hary Poter
+  </h3>
+  <p>
+    Some description
+  </p>
+  <span>
+    01-25-2018
+  </span>
+  <Link
+    replace={false}
+    to="/edit/1234"
+  >
+    Edit
+  </Link>
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+  <hr />
+</div>
+`;
