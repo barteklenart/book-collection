@@ -12,7 +12,8 @@ export const BookList = (props) => {
 
 	return (
 		<div>
-			{props.books.length === 0 ? <p>No books</p> : props.books.map((book) => { return <BookListItem key={book.id} book={book} removeBook={removeBook} /> })}
+			{props.books.length === 0 ? <p>No books</p> : props.books.map((book) => { 
+				return <BookListItem key={book.id} book={book} removeBook={removeBook} /> })}
 		</div>
 	);
 }

@@ -1,13 +1,16 @@
-import uuid from 'uuid';
+import database from '../firebase/firebase';
 
 export const  addBook = (book) => {
-	const id = uuid();
-	return {
-		type: 'ADD_BOOK',
-		book: {
-			id,
-			...book
-		}
+	return (dispatch) => {
+		return database.ref('books').push(book).then((ref) => {
+			dispatch({
+				type: 'ADD_BOOK',
+				book: {
+					id: ref.key,
+					...book
+				}
+			});
+		});
 	};
 };
 
