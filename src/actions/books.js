@@ -15,16 +15,24 @@ export const  addBook = (book) => {
 };
 
 export const removeBook = (id) => {
-	return {
-		type: 'REMOVE_BOOK',
-		id
+	return (dispatch) => {
+		return database.ref(`books/${id}`).remove().then(() => {
+			return dispatch({
+				type: 'REMOVE_BOOK',
+				id
+			});
+		});
 	};
 };
 
 export const editBook = (id, update) => {
-	return {
-		type: 'EDIT_BOOK',
-		id,
-		update
+	return (dispatch) => {
+		return database.ref(`books/${id}`).update(update).then(() => {
+			return dispatch({
+				type: 'EDIT_BOOK',
+				id,
+				update
+			});
+		});
 	};
 };
