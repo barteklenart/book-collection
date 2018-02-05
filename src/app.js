@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addBook } from './actions/books';
+import { setBooks } from './actions/books';
 
 const store = configureStore(); 
 const appDomEl = document.getElementById('app');
@@ -19,4 +19,5 @@ const app = (
 	</Provider>
 );
 
+store.dispatch(setBooks());
 ReactDOM.render(app, appDomEl);

@@ -21,6 +21,9 @@ export default (state = [], action) => {
 				}
 			});
 		}
+		case 'SET_BOOKS' : {
+			return action.books;
+		}
 		default:
 			return state;
 	}

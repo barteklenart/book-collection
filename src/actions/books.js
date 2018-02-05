@@ -36,3 +36,23 @@ export const editBook = (id, update) => {
 		});
 	};
 };
+
+export const setBooks = () => {
+	return (dispatch) => {
+		database.ref('books').once('value').then((snapshot) => {
+			const books = [];
+
+			snapshot.forEach((childSnapshot) => {
+				books.push({
+					id: childSnapshot.key,
+					...childSnapshot.val()
+				});
+			});
+
+			return dispatch({
+				type: 'SET_BOOKS',
+				books
+			});				
+		});
+	};
+};
