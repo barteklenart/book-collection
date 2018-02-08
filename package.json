@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config=jest.config.json",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "build:prod": "webpack -p",
+    "start": "node server/server.js",
+    "heroku-build": "yarn run build:prod"
   },
   "author": "Bartek Lenart",
   "license": "ISC",
