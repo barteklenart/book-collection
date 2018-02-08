@@ -57,11 +57,15 @@ class BookListFilters extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="input-group">
+				<div className="input-group-prepend">
+					<span className="input-group-text" id="">Book title</span>
+				</div>
 				<input
 					type="text"
 					value={this.state.searchText}
 					onChange={this.onInputChange}
+					className="form-control"
 				/>
 				<select onChange={this.onSelect}>
 					<option value="dateup">Date ↑</option>
@@ -70,13 +74,13 @@ class BookListFilters extends React.Component {
 					<option value="titledown">Title ↓</option>
 				</select>
 				<DateRangePicker
-					startDate={this.state.startDate} 
-					startDateId="startDateId" 
-					endDate={this.state.endDate} 
-					endDateId="endDateId" 
-					onDatesChange={this.onDatesChange} 
+					startDate={this.state.startDate}
+					startDateId="startDateId"
+					endDate={this.state.endDate}
+					endDateId="endDateId"
+					onDatesChange={this.onDatesChange}
 					focusedInput={this.state.focusedInput}
-					onFocusChange={this.onFocusChange} 
+					onFocusChange={this.onFocusChange}
 				/>
 			</div>
 		);

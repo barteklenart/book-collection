@@ -6,7 +6,7 @@ import BookListFilters from './BookListFilters';
 
 const DashboardPage = () => {
 	return (
-		<div>
+		<div className="container">
 			<BookListFilters />
 			<BookList />
 		</div>

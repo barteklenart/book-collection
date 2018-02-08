@@ -13,7 +13,7 @@ export class EditBook extends React.Component {
 
 	render(){
 		return (
-			<div>
+			<div className="container">
 				<BookForm onSubmit={this.onSubmit} book={this.props.book}/>
 			</div>
 		);

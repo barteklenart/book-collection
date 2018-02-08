@@ -10,7 +10,7 @@ export const AddBook = (props) => {
 		props.history.push('/');
 	};
 	return (
-		<div>
+		<div className="container">
 			<h2>Add new book</h2>
 			<BookForm onSubmit={onSubmit}/>
 		</div>
