@@ -1,7 +1,6 @@
 import * as firebase from 'firebase';
 
 const config = {
-	apiKey: 'AIzaSyAcb5EUoTXWDPdmVRBmi_vReBxD7CTVHIk',
 	authDomain: 'bookcollection-39648.firebaseapp.com',
 	databaseURL: 'https://bookcollection-39648.firebaseio.com',
 	projectId: 'bookcollection-39648',
